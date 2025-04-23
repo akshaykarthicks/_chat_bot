@@ -18,14 +18,14 @@ generation_config = {
 # Initialize session state for chat history if it doesn't exist
 if "chat_session" not in st.session_state:
     model = genai.GenerativeModel(
-        model_name="gemini-pro",
+        model_name="gemini-1.5-pro",
         generation_config=generation_config,
     )
     st.session_state.chat_session = model.start_chat(history=[])
     st.session_state.messages = []
 
 # Streamlit UI
-st.title("Gemini AI Chat")
+st.title("Gemini 1.5 Pro Chat")
 
 # Display chat messages
 for message in st.session_state.messages:
